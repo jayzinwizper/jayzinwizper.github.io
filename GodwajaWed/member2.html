@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>GODWAJA713 – Leader Page</title>
+
+<!-- ฟ้อนต์ Orbitron -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-image: url("https://img2.pic.in.th/pic/595851685_122187333638377741_5959561869699786477_n.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 0;
+}
+
+/* หัวข้อ */
+h1 {
+    margin-bottom: 30px;
+    font-size: 42px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+/* ช่องค้นหา Glass */
+.search-box {
+    width: 60%;
+    max-width: 500px;
+    padding: 16px 20px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    outline: none;
+    margin: 20px auto 40px;
+    display: block;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+.search-box:focus {
+    border-color: rgba(255,255,255,0.6);
+    box-shadow: 0 0 15px rgba(255,255,255,0.4), 0 0 15px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.1);
+}
+.search-box::placeholder {
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+}
+
+/* กริดการ์ดสมาชิก */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.btn-box {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    border: 2px solid rgba(255,255,255,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-box:hover {
+    transform: scale(1.05);
+    background: rgba(255,0,0,0.3);
+    border-color: rgba(255,0,0,0.6);
+}
+
+/* รูปโปรไฟล์สี่เหลี่ยมมุมมน */
+.btn-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* ปุ่มนำทาง */
+.nav-btn {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding: 14px 28px;
+    margin: 10px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
+.nav-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ปุ่มควบคุมเสียงเพลง - ขวามือสุด */
+.audio-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+.audio-controls button {
+    background: rgba(255,0,0,0.1);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.audio-controls button:hover {
+    background: rgba(255,0,0,0.3);
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000 inset;
+}
+
+/* Footer */
+footer {
+    margin-top: 45px;
+    font-size: 15px;
+    opacity: 0.8;
+    color: #ccc;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="overlay">
+
+    <!-- หัวข้อ -->
+    <h1>GODWAJA713 – Member </h1>
+
+    <!-- ช่องค้นหา -->
+    <input type="text" id="searchInput" class="search-box" placeholder="🔍 ค้นหาชื่อสมาชิก...">
+
+    <!-- การ์ดสมาชิก -->
+    <div class="card-grid" id="cardContainer">
+
+    <a class="btn-box" data-name="Really Moo" href="https://www.facebook.com/siththichay.peiym.ngam">
+            <img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/481352519_1889294895164386_4772823574252432371_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG7MWtP5vXFuZXrHrBzxhnUEXmE9SksdVoReYT1KSx1WlTAtKMF_ElWpr6mobTdK0eQDoApi5pf9TXZjsnEUe16&_nc_ohc=ggmwj4opMrAQ7kNvwF0MAg3&_nc_oc=AdmdVSIOdU_mOiNbBI-rap-lrHNEshc9tz8ZjoPXldoXBKiQ6JVRQuY2nJogcA-exb1UWhoTfb-gmcqyqupGQluJ&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_gid=SKdqsZIrWrBzaRDgdqJtQg&oh=00_AfngL3D4IrsfExU8-WeytPN0h_Hl9IbqmlYl1nyu4kPBsA&oe=69460991">
+            Really Moo
+        </a> 
+        <a class="btn-box" data-name="Kenta Zencruz" href="https://www.facebook.com/shin.chan.545000">
+            <img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/482216716_958972616380088_5019385730814460469_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFNiGjWUOGbZRQbkfeXubn8yKyR95e5ufzIrNK7KJagTePSXo94ChtJ_rtoiFf8mqY9KJddgnHHBAgr&_nc_ohc=Zmx1OJ_oDIIQ7kNvwH7H9rv&_nc_oc=AdkVyVtXAv-z0OFyFXlDBcmeKpqoW5mGO9r0DBTFHRzAhh7Jy2mVunKDFuIRY1qxsqc2AN1IrxjVkZGuOKjSaW5W&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_gid=fwkWW66QlwIvxDcm-wrrlg&oh=00_AflE6nFCfqj25zTxUPqBQS0ZOXL5Rk0M7kCQWE3wT7mreQ&oe=6946012C">
+            Shin Chan 
+        </a>
+        <a class="btn-box" data-name="Xzear Naroksongmakoet" href="https://www.facebook.com/oscar.godwaja">
+            <img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/455142678_122132427938297842_8539532008440790064_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHpwoPb0V3XHFFLZzCWo33hXHSqTRJPUn9cdKpNEk9Sf2UHGv8kXyB7s1HV8ABRbX-sxBO2bCekubU3xZPVQjBb&_nc_ohc=JVNbx_qGDFIQ7kNvwGgueZ8&_nc_oc=AdnzW23V4tbxq9_j9MfhLp67ZTj-sJeqTI9U8L3EM7FV44eomlx1bGq2e-JEmn_r-2e8DTOXPMM0b6iWMaTufTzd&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_gid=QZge7Qd_CAm0atT2uDYZHA&oh=00_Afnorez-MLOYCuE3DR9x8aol0W65z6l0iOlnLRzpxZ3yBg&oe=69461C55">
+            Shin Chan 
+        </a>
+        <a class="btn-box" data-name="Khiw Godwaja" href="https://www.facebook.com/khiw.sfour">
+            <img src="https://scontent.fbkk35-1.fna.fbcdn.net/v/t39.30808-6/558081793_122159667116793794_5927461997108319705_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF41nRZ2Xq07zePAREa5DRmPFbLyWntEMQ8VsvJae0QxJfHhMhBJatWld-BAB_lI3dQm1on43P7YeLG5RHdLqcL&_nc_ohc=pqaJoLFvHIQQ7kNvwE18-I8&_nc_oc=AdkiW2KkLVrvnkci8hBvG6i8ZohqZiJ8NtLAub2m2d_PH6RvVPQ1B21qydxj3vqbh1Yk6OqBfCXb-44zKGzXX34G&_nc_zt=23&_nc_ht=scontent.fbkk35-1.fna&_nc_gid=zcVFOH-whCB73amF3BAjGw&oh=00_Afl0yhobwXR6zo-W4nAQKGphfMVfhi_PSVujBPV3_G_YiA&oe=694615C4">
+            Khiw Godwaja  
+        </a>
+    </div>
+
+    <!-- ปุ่มนำทาง -->
+    <div>
+        <a class="nav-btn" href="member.html">⬅ กลับหน้าหลัก</a>
+        <a class="nav-btn" href="member2.html">ถัดไป ➜</a>
+    </div>
+<div style="
+    display:inline-block;
+    padding:6px 18px;
+    border-radius:20px;
+    background:rgba(255,0,0,0.25);
+    border:1px solid #ff0000;
+    color:#fff;
+    font-size:16px;
+    margin-bottom:25px;
+">
+    P 2/2
+</div>
+
+    <footer>© 2025 GODWAJA713 TEAM</footer>
+
+</div>
+
+<!-- เพลงอัตโนมัติ -->
+<audio id="bgMusic" autoplay loop>
+    <source src="NEFFEX - Grateful Copyright Free No54.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ปุ่มเสียง -->
+<div class="audio-controls">
+    <button id="playPauseBtn">▶️</button>
+    <button id="volDown">🔉</button>
+    <button id="volUp">🔊</button>
+</div>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".btn-box");
+
+searchInput.addEventListener("keyup", function () {
+    const value = searchInput.value.toLowerCase();
+    cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        card.style.display = name.includes(value) ? "block" : "none";
+    });
+});
+
+// เพลงเริ่มต้นเสียง 35%
+const bgMusic = document.getElementById("bgMusic");
+bgMusic.volume = 0.35;
+
+const playPauseBtn = document.getElementById("playPauseBtn");
+const volUpBtn = document.getElementById("volUp");
+const volDownBtn = document.getElementById("volDown");
+
+playPauseBtn.addEventListener("click", () => {
+    if (bgMusic.paused) { bgMusic.play(); } else { bgMusic.pause(); }
+});
+volUpBtn.addEventListener("click", () => { bgMusic.volume = Math.min(bgMusic.volume + 0.1, 1); });
+volDownBtn.addEventListener("click", () => { bgMusic.volume = Math.max(bgMusic.volume - 0.1, 0); });
+</script>
+
+</body>
+</html>
